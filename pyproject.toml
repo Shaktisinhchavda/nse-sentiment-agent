@@ -1,0 +1,24 @@
+[project]
+name = "nse-sentiment-agent"
+version = "1.0.0"
+description = "NSE/BSE Sentiment Chat Agent — Analyzes YouTube trading creators and NSE deals for stock sentiment"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.11"
+dependencies = [
+    "openai>=1.0.0",
+    "python-dotenv>=1.0.0",
+    "fire>=0.5.0",
+    "apify-client>=1.6.0",
+    "youtube-transcript-api>=0.6.0",
+    "requests>=2.31.0",
+    "jugaad-data>=0.25",
+    "chromadb>=0.4.0",
+    "sentence-transformers>=2.2.0",
+    "rich>=13.0.0",
+    "pandas>=2.0.0",
+    "tiktoken>=0.5.0",
+]
+
+[project.scripts]
+nse-sentiment = "main:main"
