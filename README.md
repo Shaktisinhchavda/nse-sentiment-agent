@@ -2,7 +2,7 @@
 
 > **CrowdWisdomTrading Intern Assessment** — A backend Python project using the Hermes Agent framework that provides sentiment analysis from 100 YouTube trading creators and NSE Bulk/Block deals data.
 
-## 🎯 What It Does
+##  What It Does
 
 1. **Fetches NSE Bulk & Block Deals** — Real-time deal data from NSE India (last 24 hours)
 2. **Scrapes 100 YouTube Videos** — From Indian trading creators via Apify (last 24 hours)
@@ -11,7 +11,7 @@
 5. **Trading Recommendations** — With appropriate disclaimers
 6. **Closed Learning Loop** — Improves responses based on user feedback (Hermes skill system)
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -30,12 +30,12 @@
 └─────────────────────────────────────────────┘
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/nse-sentiment-agent.git
+git clone https://github.com/Shaktisinhchavda/nse-sentiment-agent.git
 cd nse-sentiment-agent
 uv sync
 ```
@@ -69,7 +69,7 @@ Or run both in one go:
 uv run main.py pipeline+chat
 ```
 
-## 💬 Example Chat Session
+##  Example Chat Session
 
 ```
 You: What's the sentiment on RELIANCE?
@@ -85,11 +85,11 @@ Agent: Based on recent YouTube creator analysis, RELIANCE shows a **bullish** se
 
 Overall: 3 bullish, 0 bearish, 1 neutral mention across 4 sources.
 
-⚠️ This is based on YouTube creator sentiment and NSE deal data analysis,
+ This is based on YouTube creator sentiment and NSE deal data analysis,
 not financial advice. Always do your own research.
 
 ─────────────────────────────────────────────
-💡 Rate this response: /feedback good|bad|neutral [comment]
+ Rate this response: /feedback good|bad|neutral [comment]
 ─────────────────────────────────────────────
 
 You: Why are people bullish on HDFC Bank?
@@ -104,13 +104,13 @@ Agent: Creators are bullish on HDFCBANK for several reasons:
 
 Confidence: High (0.85) based on 5 consistent bullish mentions.
 
-⚠️ Not financial advice. Consult a SEBI-registered advisor.
+ Not financial advice. Consult a SEBI-registered advisor.
 
 You: /feedback good Great answer with good citations!
 ✓ Feedback recorded: good
 ```
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 nse-sentiment-agent/
@@ -145,7 +145,7 @@ nse-sentiment-agent/
     └── sentiments.json          # Extracted sentiments
 ```
 
-## 🧠 Chunking Strategy
+##  Chunking Strategy
 
 The RAG system uses a **dual-strategy chunking** approach:
 
@@ -155,7 +155,7 @@ The RAG system uses a **dual-strategy chunking** approach:
 
 Each chunk includes metadata: source channel, video URL, timestamp, and stock symbol (if applicable).
 
-## 🔄 Closed Learning Loop
+##  Closed Learning Loop
 
 The agent implements a **closed learning loop** using Hermes Agent's built-in skill system:
 
@@ -165,7 +165,7 @@ The agent implements a **closed learning loop** using Hermes Agent's built-in sk
 4. The agent progressively improves its responses based on accumulated feedback
 5. Hermes skills (`skills/sentiment-learning-loop/SKILL.md`) document this mechanism
 
-## 🔧 Technical Stack
+##  Technical Stack
 
 | Component | Technology |
 |-----------|-----------|
@@ -177,7 +177,7 @@ The agent implements a **closed learning loop** using Hermes Agent's built-in sk
 | Transcripts | youtube-transcript-api + Apify fallback |
 | CLI | Python (Rich formatting) |
 
-## 📝 Approach
+##  Approach
 
 1. **No Mock Data** — All data is fetched live from NSE India and YouTube via Apify
 2. **RAG over Full Context** — Uses retrieval-augmented generation to ground responses in actual data, avoiding hallucinations
@@ -186,7 +186,7 @@ The agent implements a **closed learning loop** using Hermes Agent's built-in sk
 5. **Feedback Learning** — Persistent feedback loop progressively improves accuracy
 6. **Graceful Fallbacks** — Multiple fallback paths (NSE API → jugaad-data, yt-transcript-api → Apify)
 
-## ⚙️ Configuration
+##  Configuration
 
 All configuration is in `.env`:
 
@@ -197,10 +197,8 @@ OPENROUTER_MODEL=google/gemini-2.5-flash  # Optional override
 LOG_LEVEL=INFO                     # Optional: DEBUG, INFO, WARNING
 ```
 
-## 📄 License
+##  License
 
 MIT
 
----
 
-Built with ❤️ for CrowdWisdomTrading internship assessment.
